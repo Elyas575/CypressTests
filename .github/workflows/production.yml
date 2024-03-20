@@ -1,7 +1,7 @@
 name: Production
 on: [push]
 jobs:
-  cypress-run:
+  Production:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -9,4 +9,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          spec: 'cypress/e2e/production/Test2.cy.js'
+          spec: 'cypress/e2e/production/*'
