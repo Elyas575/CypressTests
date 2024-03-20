@@ -1,5 +1,5 @@
 name: Production
-on: [push]
+on: workflow_dispatch
 jobs:
   Production:
     runs-on: ubuntu-22.04
