@@ -9,5 +9,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Cypress run
-        run: cypress-io/github-action@v2
-        with: npm run npx production:test
+        run: npx cypress run --spec 'cypress/e2e/production/*'
