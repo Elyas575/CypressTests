@@ -1,10 +1,13 @@
 name: Production
 on: [push]
 jobs:
-  Production_Tests:
+  cypress-run:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-      - run: npm install
-      - run: npx cypress run --spec 'cypress/e2e/production/*'
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      # https://github.com/cypress-io/github-action
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
