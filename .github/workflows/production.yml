@@ -9,4 +9,5 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Cypress run
-        run: npm run production:test
+        run: cypress-io/github-action@v2
+        with: npx run production:test
