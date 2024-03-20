@@ -6,5 +6,14 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cypress run
+      - name: Install dependencies
+        run: npm ci
+      - name: Cache Cypress binary
+        uses: cypress-io/cache@v2
+        with:
+          cache-key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          cache-folder: |
+            ~/.cache
+            ~/.config/Cypress
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v2
