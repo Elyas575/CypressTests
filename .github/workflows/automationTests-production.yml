@@ -1,5 +1,5 @@
-name: XD
-on: [push]
+name: TestingName1234
+on: [workflow_dispatch]
 jobs:
   automationTests_production:
     runs-on: ubuntu-22.04
